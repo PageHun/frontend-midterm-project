@@ -1,0 +1,29 @@
+
+.header {
+}
+.container {
+}
+.header__content {
+    min-height: 150px;
+    margin: 30px 0;
+    padding: 0px 30px;
+    background-color: var(--green-color);
+    border-radius: 16px;
+}
+.header__content a{
+    color: var(--dark-color);
+}
+
+.header__logo {
+    font-weight: bold;
+    font-size: 48px;
+}
+.header__nav {
+}
+.header__list {
+    gap: 60px;
+    margin-bottom: 0;
+}
+.header__list-item {
+    font-size: 18px;
+}
