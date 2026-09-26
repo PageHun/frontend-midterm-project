@@ -4,6 +4,7 @@
 @import "info.css";
 @import "discount.css";
 @import "news.css";
+@import "footer.css";
 
 :root {
   --green-color: #D1EF53;
