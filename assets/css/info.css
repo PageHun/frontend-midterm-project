@@ -27,3 +27,13 @@
 .info__right img{
     border-radius: 16px;
 }
+
+.__not-green{
+    background-color: var(--dark-color);
+}
+.info__content.__not-green .info__title, .info__content.__not-green .info__text{
+    color: var(--white-color);
+}
+.info__content.__not-green .info__left img{
+    border-radius: 16px;
+}

@@ -1,0 +1,25 @@
+.sitemap {
+}
+.container {
+}
+.sitemap__content {
+    min-height: 100px;
+    padding: 0px 30px;
+    margin-bottom: 30px;
+}
+.sitemap__info a{
+    font-size: 18px;
+    color: var(--white-color);
+}
+.sitemap__nav {
+}
+.sitemap__list {
+    gap: 60px;
+    margin-bottom: 0;
+}
+.sitemap__list-item {
+    font-size: 18px;
+}
+.sitemap__list-item a{
+    color: var(--white-color);
+}

@@ -26,6 +26,15 @@
     background-size: cover contain;
     border-radius: 16px;
 }
+.discount__row-item:nth-child(2){
+    background-image: url(../imgs/discount-2.jpg);
+}
+.discount__row-item:nth-child(3){
+    background-image: url(../imgs/discount-3.jpg);
+}
+.discount__row-item:nth-child(4){
+    background-image: url(../imgs/discount-4.jpg);
+}
 .discount__price {
     display: inline-flex;
     justify-content: space-between;
