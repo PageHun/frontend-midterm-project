@@ -3,6 +3,7 @@
 .hero__content {
     min-height: 820px;
     position: relative;
+    margin-bottom: 30px;
 }
 .hero__title {
     padding-top: 40px;

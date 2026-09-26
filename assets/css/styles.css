@@ -1,6 +1,7 @@
 @import "zero.css";
 @import "header.css";
 @import "hero.css";
+@import "info.css";
 
 :root {
   --green-color: #D1EF53;
@@ -18,7 +19,21 @@
 .order-btn {
     cursor: pointer;
     padding: 16px 60px;
+    font-size: 18px;
     background-color: var(--purple-color);
+}
+
+.info-btn {
+    cursor: pointer;
+    padding: 16px 60px;
+    font-size: 18px;
+    background-color: var(--white-color);
+    border: 4px solid var(--dark-color);
+    box-shadow: 8px 8px 0px var(--dark-color);
+}
+
+.info-btn a{
+    color: var(--dark-color);
 }
 
 *{

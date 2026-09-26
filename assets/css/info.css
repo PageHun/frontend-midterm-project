@@ -1,0 +1,29 @@
+.info {
+}
+.container {
+}
+.info__content {
+    padding: 60px 30px;
+    background-color: var(--green-color);
+    border-radius: 16px;
+}
+.info__left {
+}
+.info__title {
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.info__text {
+    max-width: 500px;
+    font-size: 18px;
+}
+.info__text:last-of-type{
+    margin-top: 36px;
+}
+.info__button {
+    margin-top: 30px;
+}
+.info__right img{
+    border-radius: 16px;
+}
