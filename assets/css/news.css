@@ -1,0 +1,27 @@
+.news {
+}
+.news__content {
+    margin-top: 30px;
+}
+.news__title {
+    font-weight: bold;
+    font-size: 36px;
+    color: var(--white-color);
+    padding: 60px 30px;
+}
+.news__row {
+    gap: 50px;
+}
+.news__row-item {
+    max-width: 367px;
+}
+.news__row-item img{
+    border-radius: 20px;
+    object-position: 1px;
+}
+.news__desc {
+    margin-top: 20px;
+    padding: 28px;
+    background-color: var(--green-color);
+    border-radius: 16px;
+}

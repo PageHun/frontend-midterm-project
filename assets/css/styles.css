@@ -3,6 +3,7 @@
 @import "hero.css";
 @import "info.css";
 @import "discount.css";
+@import "news.css";
 
 :root {
   --green-color: #D1EF53;

@@ -58,3 +58,6 @@
 .discount__button {
     margin-top: 60px;
 }
+.discount__button a {
+    color: var(--dark-color);
+}
