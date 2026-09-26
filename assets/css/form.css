@@ -1,0 +1,37 @@
+.join-us {
+}
+.container {
+}
+.join-us__content {
+    padding: 0 30px;
+}
+.join-us__title {
+    font-weight: bold;
+    font-size: 36px;
+    color: var(--white-color);
+}
+.form{
+    margin-top: 60px;
+    padding: 30px;
+    width: 568px;
+    background-color: var(--purple-color);
+    border-radius: 16px;
+}
+.form div{
+    display: flex;
+    flex-direction: column;
+}
+.form div label{
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.form div input{
+    margin-bottom: 40px;
+    padding: 16px 20px;
+    background-color: var(--white-color);
+    border: 1px solid var(--dark-color);
+    color: var(--dark-color);
+}
+.join-us__btn {
+    align-self: self-start;
+}

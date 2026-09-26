@@ -13,7 +13,6 @@
 .header__content a{
     color: var(--dark-color);
 }
-
 .header__logo {
     font-weight: bold;
     font-size: 48px;

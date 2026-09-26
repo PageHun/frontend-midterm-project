@@ -25,6 +25,11 @@
     color: var(--dark-color);
     font-size: 18px;
     padding: 40px 20px;
+    transition: .6s ease all;
+}
+.menu__list-item a:hover{
+    background-color: var(--purple-color);
+    transition: .6 ease all;
 }
 .__active-tab {
 }
