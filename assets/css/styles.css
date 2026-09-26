@@ -1,5 +1,6 @@
 @import "zero.css";
 @import "header.css";
+@import "hero.css";
 
 :root {
   --green-color: #D1EF53;

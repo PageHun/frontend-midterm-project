@@ -1,0 +1,17 @@
+.hero {
+}
+.hero__content {
+    min-height: 820px;
+    position: relative;
+}
+.hero__title {
+    padding-top: 40px;
+    font-weight: bold;
+    font-size: 100px;
+    color: var(--white-color);
+}
+.hero__img{
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+}
