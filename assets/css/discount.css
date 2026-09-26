@@ -35,12 +35,20 @@
 .discount__row-item:nth-child(4){
     background-image: url(../imgs/discount-4.jpg);
 }
+.discount__top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.discount__top .add-cart{
+    cursor: pointer;
+}
 .discount__price {
     display: inline-flex;
     justify-content: space-between;
     gap: 20px;
-    margin: 20px;
-    padding: 15px;
+    margin: 0px 20px;
+    padding: 20px 15px;
     background-color: var(--dark-color);
 }
 .discount__price span:first-child{

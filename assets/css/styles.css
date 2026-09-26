@@ -6,6 +6,7 @@
 @import "news.css";
 @import "footer.css";
 @import "sitemap.css";
+@import "menu.css";
 
 :root {
   --green-color: #D1EF53;
@@ -39,6 +40,25 @@
 .info-btn a{
     color: var(--dark-color);
 }
+
+.__active{
+    padding: 15px;
+    background-color: var(--green-color);
+}
+
+.__active a{
+    color: var(--dark-color);
+}
+
+.__active-tab{
+    font-size: 18px;
+    background-color: var(--purple-color);
+}
+
+.__active-tab a{
+    color: var(--dark-color);
+}
+
 
 *{
     font-family: "Sansation", sans-serif;

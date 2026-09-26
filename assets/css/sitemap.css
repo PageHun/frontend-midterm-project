@@ -18,6 +18,7 @@
     margin-bottom: 0;
 }
 .sitemap__list-item {
+    align-self: center;
     font-size: 18px;
 }
 .sitemap__list-item a{
