@@ -54,6 +54,10 @@
         font-size: 18px;
         padding: 12px 20px;
     }
+    .order-btn a{
+        padding: 12px 20px;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 424px) {
@@ -65,6 +69,10 @@
     }
     .info-btn:hover{
         box-shadow: 6px 6px 0px var(--dark-color);
+    }
+    .order-btn a{
+        padding: 12px 16px;
+        font-size: 14px;
     }
 }
 

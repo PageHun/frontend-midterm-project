@@ -97,3 +97,74 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+@media (max-width: 790px) {
+    .discount__content {
+        margin-top: 15px;
+        padding: 30px 15px;
+    }
+    .discount__row{
+        gap: 15px;
+    }
+    .discount__button{
+        margin-top: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .discount__title{
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .discount__row-item {
+        width: 280px;
+        min-height: 360px;
+        background-size: contain cover;
+    }
+    .discount__top{
+        margin-bottom: 5px;
+    }
+    .discount__price {
+        gap: 10px;
+        margin: 0px 10px;
+        padding: 10px 10px;
+    }
+    .discount__info {
+        margin: 10px;
+        margin-top: 0px;
+        padding: 10px;
+    }
+    .discount__row-title {
+        font-size: 16px;
+    }
+    .discount__desc {
+        font-size: 13px;
+    }
+}
+@media (max-width: 669px) {
+    .discount__row{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (max-width: 424px) {
+    .discount__content{
+        padding: 15px 15px 30px 15px;
+    }
+    .discount__title{
+        font-size: 24px;
+    }
+    .discount__row-item {
+        width: 240px;
+        min-height: 320px;
+        background-size: contain cover;
+    }
+}
+@media (max-width: 374px){
+    .discount__title{
+        font-size: 20px;
+    }
+}
+@media (max-width: 334px) {
+    .discount__row-item{
+        width: 230px;
+        min-height: 340px;
+    }
+}
