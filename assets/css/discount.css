@@ -14,6 +14,9 @@
     margin-bottom: 20px;
 }
 .discount__row {
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+    margin: 0 auto;
 }
 .discount__row-item {
     width: 320px;
@@ -73,8 +76,24 @@
     color: var(--white-color);
 }
 .discount__button {
+    align-self: flex-end;
     margin-top: 60px;
 }
 .discount__button a {
     color: var(--dark-color);
+}
+
+@media (max-width: 1504px) {
+    .discount__row{
+        margin: 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .discount__button{
+        align-self: start;
+    }
+}
+@media (max-width: 1137px) {
+    .discount__row{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

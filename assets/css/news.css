@@ -10,6 +10,7 @@
     padding: 60px 30px;
 }
 .news__row {
+    flex-wrap: wrap;
     gap: 50px;
 }
 .news__row-item {

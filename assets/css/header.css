@@ -26,3 +26,60 @@
 .header__list-item {
     font-size: 18px;
 }
+
+.burger-menu{
+    display: none;
+}
+
+@media (max-width: 1237px) {
+    .header__list {
+        gap: 30px;
+    }
+}
+@media (max-width: 1187px) {
+    .header__nav {
+        display: none;
+    }
+    .burger-menu{
+        position: relative;
+        display: block;
+    }
+    .burger-menu span, .burger-menu::after, .burger-menu::before{
+        position: absolute;
+        right: 15px;
+        content: " ";
+        width: 40px;
+        height: 4px;
+        background-color: var(--dark-color);
+        border-radius: 4px;
+    }
+    .burger-menu::after{
+        top: -10px;
+    }
+    .burger-menu::before{
+        top: 10px;
+    }
+}
+@media (max-width: 767px) {
+    .header__content{
+        margin: 15px 0;
+        padding: 0 15px;
+        min-height: 120px;
+    }
+    .header__logo {
+        font-size: 36px;
+    }
+    .burger-menu span, .burger-menu::after, .burger-menu::before{
+        right: 10px;
+    }
+}
+@media (max-width: 717px) {
+    .header__logo {
+        width: 200px;
+    }
+}
+@media (max-width: 424px) {
+    .header__logo {
+        font-size: 28px;
+    }
+}
