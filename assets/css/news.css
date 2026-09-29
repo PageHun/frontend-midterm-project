@@ -51,7 +51,8 @@
         gap: 30px;
     }
     .news__row-item{
-        width: 280px;
+        flex-grow: 1;
+        max-width: 700px;
     }
     .news__row-item img{
         width: 100%;
