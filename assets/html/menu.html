@@ -34,7 +34,7 @@
         </header>
         <div class="sitemap">
             <div class="container">
-                <div class="sitemap__content d-flex justify-content-start align-items-center">
+                <div class="sitemap__content d-flex justify-content-start align-items-center" style="min-height: 100px;">
                     <div class="sitemap__info">
                         <a href="../../index.html">index.html/</a><a href="">menu.html/</a>
                     </div>
@@ -47,17 +47,19 @@
                     <div class="menu__content d-flex justify-content-between">
                         <aside class="menu__sidebar">
                             <h2 class="menu__title">MENU</h2>
-                            <ul class="menu__list">
-                                <li class="menu__list-item __active-tab"><a href="">What's new</a></li>
-                                <li class="menu__list-item"><a href="">Breakfast combos</a></li>
-                                <li class="menu__list-item"><a href="">Combos</a></li>
-                                <li class="menu__list-item"><a href="">Hamburgers</a></li>
-                                <li class="menu__list-item"><a href="">Cheeseburgers</a></li>
-                                <li class="menu__list-item"><a href="">Desserts</a></li>
-                                <li class="menu__list-item"><a href="">BURGER HEAVEN'S <br> KIDS' MEAL</a></li>
-                            </ul>
+                            <nav class="menu__nav">
+                                <ul class="menu__list">
+                                    <li class="menu__list-item __active-tab"><a href="">What's new</a></li>
+                                    <li class="menu__list-item"><a href="">Breakfast combos</a></li>
+                                    <li class="menu__list-item"><a href="">Combos</a></li>
+                                    <li class="menu__list-item"><a href="">Hamburgers</a></li>
+                                    <li class="menu__list-item"><a href="">Cheeseburgers</a></li>
+                                    <li class="menu__list-item"><a href="">Desserts</a></li>
+                                    <li class="menu__list-item"><a href="">BURGER HEAVEN'S <br> KIDS' MEAL</a></li>
+                                </ul>                                
+                            </nav>
                         </aside>
-                        <div class="menu__grid d-grid" style="grid-template-columns: repeat(3, 1fr); gap: 60px 50px;">
+                        <div class="menu__grid d-grid">
                             <div class="menu__grid-item">
                                 <div class="menu__price">
                                     <span>$3.99</span>
@@ -174,6 +176,7 @@
                             </div>
                             <div class="menu__grid-item">
                                 <div class="menu__price">
+                                    <span>$3.99</span>
                                     <button class="menu__btn add-cart">
                                         <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="55.3974" height="55.3974" fill="#D1EF53"/>
@@ -192,6 +195,7 @@
                             </div>
                             <div class="menu__grid-item">
                                 <div class="menu__price">
+                                    <span>$3.99</span>
                                     <button class="menu__btn add-cart">
                                         <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="55.3974" height="55.3974" fill="#D1EF53"/>
@@ -235,7 +239,7 @@
                 <div class="container">
                     <div class="discount__content d-flex flex-column align-items-start">
                         <h2 class="discount__title">DISCOUNT</h2>
-                        <div class="discount__row d-grid" style="grid-template-columns: repeat(4, 1fr); gap: 30px; margin: 0 auto;">
+                        <div class="discount__row d-grid">
                             <div class="discount__row-item">
                                 <div class="discount__top">
                                     <div class="discount__price">
