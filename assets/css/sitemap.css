@@ -62,12 +62,13 @@
         margin-bottom: 15px;
     }
     .sitemap__nav{
-        height: 40px;
-        width: 100%;
         overflow-x: scroll;
     }
+    .sitemap__list{
+        height: 40px;
+        align-items: center;
+    }
     .sitemap__list-item{
-        flex-shrink: 0;
         font-size: 16px;
     }
     .sitemap__list-item a{

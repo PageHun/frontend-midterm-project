@@ -1,0 +1,14 @@
+.history{
+    max-width: 100vw;
+    height: auto;
+    margin-top: 60px; 
+}
+.history img{
+    width: 100%;
+}
+
+@media (max-width: 424px) {
+    .history{
+        margin-top: 30px;
+    }
+}

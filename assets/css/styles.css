@@ -9,6 +9,7 @@
 @import "menu.css";
 @import "table.css";
 @import "form.css";
+@import "history.css";
 
 :root {
   --green-color: #D1EF53;
@@ -121,6 +122,12 @@
 
 .__active-tab a{
     color: var(--dark-color);
+}
+
+@media (max-width: 424px) {
+    .__active{
+        padding: 8px;
+    }
 }
 
 
