@@ -35,3 +35,38 @@
 .join-us__btn {
     align-self: self-start;
 }
+
+@media (max-width: 767px) {
+    .join-us__content{
+        max-width: 700px;
+        align-items: start !important;
+        margin-top: 15px;
+    }
+    .form{
+        width: 100%;
+    }
+    .join-us__title{
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 424px) {
+    .join-us__content{
+        padding: 0 15px;
+    }
+    .join-us__btn{
+        align-self: stretch;
+    }
+    .form{
+        margin-top: 30px;
+        padding: 20px;
+    }
+    .form div label{
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    .form div input{
+        margin-bottom: 20px;
+        padding: 12px 16px;
+    }
+}

@@ -59,6 +59,7 @@
     .sitemap__content{
         min-height: 150px;
         padding: 15px;
+        margin-bottom: 15px;
     }
     .sitemap__nav{
         height: 40px;

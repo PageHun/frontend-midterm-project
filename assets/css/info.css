@@ -63,8 +63,20 @@
     .info__content{
         padding: 30px;
     }
+    .info__content:last-of-type{
+        margin-top: 15px;
+    }
+    .info__right{
+        max-width: 500px;
+    }
     .info__right img{
-        width: 500px;
+        width: 100%;
+    }
+    .info__left{
+        max-width: 500px;
+    }
+    .info__left img{
+        width: 100%;
     }
     .info__title{
         font-size: 28px;
@@ -76,22 +88,9 @@
         margin-bottom: 15px;
     }
 }
-@media (max-width: 620px) {
-    .info__right img{
-        width: 400px;
-    }
-}
-@media (max-width: 517px) {
-    .info__right img{
-        width: 300px;
-    }
-}
 @media (max-width: 424px) {
     .info__content{
         padding: 15px;
-    }
-    .info__right img{
-        width: 100%;
     }
     .info__title{
         font-size: 24px;

@@ -92,6 +92,19 @@
     border-radius: 16px;
 }
 
+@media (max-width: 767px) {
+    .form-btn{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 424px) {
+    .form-btn{
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
 .__active{
     padding: 15px;
     background-color: var(--green-color);

@@ -74,8 +74,8 @@
     }
 }
 @media (max-width: 717px) {
-    .header__logo {
-        width: 200px;
+    .header__logo{
+        width: 120px;
     }
 }
 @media (max-width: 424px) {
