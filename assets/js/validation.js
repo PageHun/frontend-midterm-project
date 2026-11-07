@@ -1,3 +1,5 @@
+import { showFormMessage } from './main.js';
+
 const $form = $(".form");
 const $inputs = $form.find("input");
 
@@ -44,4 +46,5 @@ $form.on("submit", function (event) {
   this.reset();
   $inputs.removeClass("is-valid is-invalid");
   $(".feedback").text("").removeClass("feedback-valid feedback-invalid");
+  showFormMessage("Thank you for join us! Wait some news from us! <br> Good luck!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 });
