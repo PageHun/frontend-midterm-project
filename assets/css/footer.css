@@ -43,6 +43,7 @@
 }
 .footer__submit {
     /* max-width: 462px; */
+    display: flex;
     border: 1px solid var(--dark-color);
     border-radius: 16px;
 }
@@ -50,6 +51,12 @@
     width: 320px;
     padding: 16px 10px 16px 20px;
     background-color: transparent;
+    resize: none;
+}
+.footer__form-group{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
 }
 .footer__form-submit {
     padding: 16px 20px 16px 0px;

@@ -1,0 +1,343 @@
+{
+  "currency": "$",
+  "categories": [
+    {
+      "id": "whats-new",
+      "name": "What's new",
+      "items": [
+        {
+          "id": "wn-1",
+          "name": "Honey Sriracha Burger",
+          "description": "Beef patty, sriracha honey glaze, pickled onions and lettuce.",
+          "price": 5.49,
+          "haveDiscount": true,
+          "discountPrice": 4.39,
+          "imgSource": "../imgs/menu/what's-new.jpg"
+        },
+        {
+          "id": "wn-2",
+          "name": "Truffle Smash Burger",
+          "description": "Double smashed patty with truffle mayo and melted cheese.",
+          "price": 6.29,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/what's-new.jpg"
+        },
+        {
+          "id": "wn-3",
+          "name": "Nashville Hot Chicken Sandwich",
+          "description": "Crispy chicken fillet with spicy Nashville glaze and pickles.",
+          "price": 5.99,
+          "haveDiscount": true,
+          "discountPrice": 4.99,
+          "imgSource": "../imgs/menu/what's-new.jpg"
+        },
+        {
+          "id": "wn-4",
+          "name": "Loaded Bacon Fries",
+          "description": "Fries topped with bacon, cheddar sauce and green onions.",
+          "price": 3.79,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/what's-new.jpg"
+        },
+        {
+          "id": "wn-5",
+          "name": "Beyond Veggie Burger",
+          "description": "Plant-based patty, avocado and roasted tomato.",
+          "price": 5.79,
+          "haveDiscount": true,
+          "discountPrice": 4.99,
+          "imgSource": "../imgs/menu/what's-new.jpg"
+        },
+        {
+          "id": "wn-6",
+          "name": "Salted Caramel Shake",
+          "description": "Thick vanilla shake with salted caramel and whipped cream.",
+          "price": 3.49,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/what's-new.jpg"
+        }
+      ]
+    },
+    {
+      "id": "breakfast-combos",
+      "name": "Breakfast combos",
+      "items": [
+        {
+          "id": "bc-1",
+          "name": "Sunrise Bacon Combo",
+          "description": "Egg muffin with bacon, hash browns and coffee.",
+          "price": 6.99,
+          "haveDiscount": true,
+          "discountPrice": 5.99,
+          "imgSource": "../imgs/menu/breakfast.jpg.webp"
+        },
+        {
+          "id": "bc-2",
+          "name": "Egg & Cheese Muffin Combo",
+          "description": "Freshly cracked egg and melted cheese with coffee.",
+          "price": 5.49,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/breakfast.jpg.webp"
+        },
+        {
+          "id": "bc-3",
+          "name": "Pancake Stack Combo",
+          "description": "Three pancakes with maple syrup, butter and coffee.",
+          "price": 6.49,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/breakfast.jpg.webp"
+        },
+        {
+          "id": "bc-4",
+          "name": "Sausage Burrito Combo",
+          "description": "Sausage, egg and cheese wrap with hash browns.",
+          "price": 5.99,
+          "haveDiscount": true,
+          "discountPrice": 4.99,
+          "imgSource": "../imgs/menu/breakfast.jpg.webp"
+        },
+        {
+          "id": "bc-5",
+          "name": "Hash Browns & Coffee Combo",
+          "description": "Golden hash browns served with a hot coffee.",
+          "price": 4.49,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/breakfast.jpg.webp"
+        }
+      ]
+    },
+    {
+      "id": "combos",
+      "name": "Combos",
+      "items": [
+        {
+          "id": "cb-1",
+          "name": "Classic Burger Combo",
+          "description": "Classic burger, medium fries and a soft drink.",
+          "price": 8.99,
+          "haveDiscount": true,
+          "discountPrice": 7.49,
+          "imgSource": "../imgs/menu/combos.jpg"
+        },
+        {
+          "id": "cb-2",
+          "name": "Double Cheeseburger Combo",
+          "description": "Double cheeseburger, large fries and a soft drink.",
+          "price": 10.49,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/combos.jpg"
+        },
+        {
+          "id": "cb-3",
+          "name": "Chicken Burger Combo",
+          "description": "Crispy chicken burger, fries and a soft drink.",
+          "price": 9.29,
+          "haveDiscount": true,
+          "discountPrice": 7.99,
+          "imgSource": "../imgs/menu/combos.jpg"
+        },
+        {
+          "id": "cb-4",
+          "name": "Veggie Burger Combo",
+          "description": "Plant-based burger, fries and a soft drink.",
+          "price": 8.49,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/combos.jpg"
+        },
+        {
+          "id": "cb-5",
+          "name": "Family Feast Combo",
+          "description": "Four burgers, four fries, nuggets and four drinks.",
+          "price": 24.99,
+          "haveDiscount": true,
+          "discountPrice": 19.99,
+          "imgSource": "../imgs/menu/combos.jpg"
+        }
+      ]
+    },
+    {
+      "id": "hamburgers",
+      "name": "Hamburgers",
+      "items": [
+        {
+          "id": "hb-1",
+          "name": "Burger",
+          "description": "Beef patty, lettuce, tomato and our signature sauce.",
+          "price": 3.99,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/hamburgers.png.webp"
+        },
+        {
+          "id": "hb-2",
+          "name": "Double Bacon Burger",
+          "description": "Two beef patties, crispy bacon and smoky BBQ sauce.",
+          "price": 5.79,
+          "haveDiscount": true,
+          "discountPrice": 4.99,
+          "imgSource": "../imgs/menu/hamburgers.png.webp"
+        },
+        {
+          "id": "hb-3",
+          "name": "Mushroom Swiss Burger",
+          "description": "Beef patty, sauteed mushrooms and melted Swiss cheese.",
+          "price": 5.49,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/hamburgers.png.webp"
+        },
+        {
+          "id": "hb-4",
+          "name": "BBQ Onion Ring Burger",
+          "description": "Beef patty topped with crunchy onion rings and BBQ sauce.",
+          "price": 5.99,
+          "haveDiscount": true,
+          "discountPrice": 4.99,
+          "imgSource": "../imgs/menu/hamburgers.png.webp"
+        },
+        {
+          "id": "hb-5",
+          "name": "Jalapeno Burger",
+          "description": "Beef patty with spicy jalapenos and pepper jack cheese.",
+          "price": 5.29,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/hamburgers.png.webp"
+        }
+      ]
+    },
+    {
+      "id": "cheeseburgers",
+      "name": "Cheeseburgers",
+      "items": [
+        {
+          "id": "cs-1",
+          "name": "Classic Cheeseburger",
+          "description": "Beef patty with melted cheddar, pickles and sauce.",
+          "price": 4.29,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/cheeseburgers.webp"
+        },
+        {
+          "id": "cs-2",
+          "name": "Double Cheeseburger",
+          "description": "Two beef patties and double cheddar cheese.",
+          "price": 5.99,
+          "haveDiscount": true,
+          "discountPrice": 4.99,
+          "imgSource": "../imgs/menu/cheeseburgers.webp"
+        },
+        {
+          "id": "cs-3",
+          "name": "Bacon Cheeseburger",
+          "description": "Beef patty, crispy bacon and melted cheddar.",
+          "price": 5.49,
+          "haveDiscount": true,
+          "discountPrice": 4.79,
+          "imgSource": "../imgs/menu/cheeseburgers.webp"
+        },
+        {
+          "id": "cs-4",
+          "name": "Blue Cheese Burger",
+          "description": "Beef patty with creamy blue cheese and arugula.",
+          "price": 5.89,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/cheeseburgers.webp"
+        },
+        {
+          "id": "cs-5",
+          "name": "Cheddar Melt Cheeseburger",
+          "description": "Beef patty with a double layer of melted cheddar.",
+          "price": 4.99,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/cheeseburgers.webp"
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "items": [
+        {
+          "id": "ds-1",
+          "name": "Chocolate Sundae",
+          "description": "Vanilla soft serve with warm chocolate sauce.",
+          "price": 2.99,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/desserts.jpg"
+        },
+        {
+          "id": "ds-2",
+          "name": "Apple Pie",
+          "description": "Warm baked apple pie with a cinnamon filling.",
+          "price": 1.99,
+          "haveDiscount": true,
+          "discountPrice": 1.49,
+          "imgSource": "../imgs/menu/desserts.jpg"
+        },
+        {
+          "id": "ds-3",
+          "name": "Strawberry Milkshake",
+          "description": "Creamy shake blended with fresh strawberries.",
+          "price": 3.49,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/desserts.jpg"
+        },
+        {
+          "id": "ds-4",
+          "name": "Brownie with Ice Cream",
+          "description": "Warm chocolate brownie topped with vanilla ice cream.",
+          "price": 3.99,
+          "haveDiscount": true,
+          "discountPrice": 3.29,
+          "imgSource": "../imgs/menu/desserts.jpg"
+        },
+        {
+          "id": "ds-5",
+          "name": "Cookies & Cream Shake",
+          "description": "Vanilla shake blended with chocolate cookie crumbs.",
+          "price": 3.79,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/desserts.jpg"
+        }
+      ]
+    },
+    {
+      "id": "kids-meal",
+      "name": "BURGER HEAVEN'S KIDS' MEAL",
+      "items": [
+        {
+          "id": "km-1",
+          "name": "Kids Mini Burger Meal",
+          "description": "Mini burger, small fries and a juice box.",
+          "price": 5.99,
+          "haveDiscount": true,
+          "discountPrice": 4.99,
+          "imgSource": "../imgs/menu/kids-meal.jpeg"
+        },
+        {
+          "id": "km-2",
+          "name": "Kids Chicken Nuggets Meal",
+          "description": "Six nuggets, small fries and a juice box.",
+          "price": 5.49,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/kids-meal.jpeg"
+        },
+        {
+          "id": "km-3",
+          "name": "Kids Hot Dog Meal",
+          "description": "Mini hot dog, small fries and a juice box.",
+          "price": 4.99,
+          "haveDiscount": true,
+          "discountPrice": 3.99,
+          "imgSource": "../imgs/menu/kids-meal.jpeg"
+        },
+        {
+          "id": "km-4",
+          "name": "Kids Grilled Cheese Meal",
+          "description": "Grilled cheese sandwich, apple slices and a juice box.",
+          "price": 4.79,
+          "haveDiscount": false,
+          "imgSource": "../imgs/menu/kids-meal.jpeg"
+        }
+      ]
+    }
+  ]
+}

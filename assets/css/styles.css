@@ -10,12 +10,14 @@
 @import "table.css";
 @import "form.css";
 @import "history.css";
+@import "mobile-menu.css";
 
 :root {
   --green-color: #D1EF53;
   --dark-color: #1E1E1E;
   --purple-color: #B3A0CD;
   --white-color: #E9E3DC;
+  --red-color: #FF5C58;
 }
 
 .container{
@@ -26,6 +28,11 @@
 
 .order-btn a{
     cursor: pointer;
+    padding: 16px 60px;
+    font-size: 18px;
+}
+
+.order-btn {
     padding: 16px 60px;
     font-size: 18px;
     background-color: var(--purple-color);
@@ -59,6 +66,10 @@
         padding: 12px 20px;
         font-size: 16px;
     }
+    .order-btn{
+        padding: 12px 20px;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 424px) {
@@ -72,6 +83,10 @@
         box-shadow: 6px 6px 0px var(--dark-color);
     }
     .order-btn a{
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    .order-btn{
         padding: 12px 16px;
         font-size: 14px;
     }
@@ -145,6 +160,189 @@
     background-color: var(--dark-color);
 }
 
+.wrapper.white-theme{
+  --green-color: #7153EF;  
+  --dark-color: #F7F4EE;  
+  --purple-color: #b8da32;
+  --white-color: #25212B;
+  --red-color: #C9283A;
+}
+
 .main{
     flex: 1 1 auto;
+}
+
+.theme-switcher{
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+.theme-switcher__button{
+    display: none;
+    padding: 12px 16px;
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    border-radius: 16px;
+}
+.theme-switcher__button:first{
+    padding: 12px 16px;
+    background-color: var(--dark-color);
+}
+.theme-switcher__button.__active{
+    display: block;
+}
+
+.form-message{
+    display: none;
+    position: fixed;
+    padding: 20px 24px;
+    font-size: 28px;
+    right: 30px;
+    bottom: 30px;
+    background-color: var(--green-color);
+    border-radius: 16px;
+    z-index: 1000;
+}
+
+@media (max-width: 767px) {
+    .form-message{
+        padding: 16px 20px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 424px) {
+    .form-message{
+        right: 15px;
+        bottom: 15px;
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+}
+
+.shop-cart{
+    display: none;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 680px;
+    background-color: var(--white-color);
+    border-radius: 16px;
+    z-index: 10000;
+}
+.shop-cart__content {
+    min-height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.shop-cart__top {
+    display: flex;
+    justify-content: end;
+}
+.shop-cart__btn-exit{
+    background-color:transparent;
+}
+.shop-cart__main {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+.shop-cart__bottom {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.shop-cart__count{
+    max-width: 160px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.shop-cart__btn {
+    width: 48px;
+    height: 48px;
+    background-color: var(--dark-color);
+}
+.shop-cart__count-box {
+    display: flex;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--dark-color);
+}
+.shop-cart__count-info{
+    justify-self: center;
+    align-self: center;
+}
+
+.shop-cart__item{
+    min-height: 200px;
+    width: 100%;
+}
+
+.shop-cart__main .menu__grid-item .add-cart{
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .shop-cart__item{
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 767px) {
+    .shop-cart{
+        width: 400px;
+    }
+
+    .shop-cart__main .menu__info{
+        margin: 10px;
+    }
+}
+
+@media (max-width: 511px) {
+    .shop-cart{
+        width: 300px;
+    }
+}
+
+@media (max-width: 423px) {
+    .shop-cart{
+        width: 240px;
+    }
+    .shop-cart__item{
+        min-height: 280px;
+    }
+    .shop-cart__bottom{
+        flex-direction: column;
+    }
+    .shop-cart__count{
+        align-self: center;
+    }
+}
+
+.overlay{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-color);
+    opacity: 0.3;
+}
+
+.active{
+    display: block;
+}
+
+.feedback-valid{
+    color: var(--green-color);
+}
+
+.feedback-invalid{
+    color: var(--red-color);
 }

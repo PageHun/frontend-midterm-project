@@ -20,7 +20,7 @@
                     </a>
                     <nav class="header__nav">
                         <ul class="header__list d-flex align-items-center">
-                            <li class="header__list-item"><a href="">+7 777 777 7777</a></li>
+                            <li class="header__list-item"><a href="tel:+77777777777">+7 777 777 7777</a></li>
                             <li class="header__list-item"><a href="./about-us.html">About us</a></li>
                             <li class="header__list-item"><a href="./menu.html">Menu</a></li>
                             <li class="header__list-item order-btn"><a href="./menu.html">Order</a></li>
@@ -49,9 +49,23 @@
             </div>
         </div>
         <main class="main">
+            <section class="mobile-menu">
+                <div class="container">
+                    <div class="mobile-menu__content">
+                        <nav class="mobile-menu__nav header__nav">
+                            <ul class="mobile-menu__list header__list d-flex align-items-center">
+                                <li class="mobile-menu__list-item header__list-item"><a href="tel:+77777777777">+7 777 777 7777</a></li>
+                                <li class="mobile-menu__list-item header__list-item"><a href="./about-us.html">About us</a></li>
+                                <li class="mobile-menu__list-item header__list-item"><a href="./menu.html">Menu</a></li>
+                                <li class="mobile-menu__list-item header__list-item order-btn"><a href="./menu.html">Order</a></li>
+                            </ul>
+                        </nav>
+                    </div>                    
+                </div>
+            </section>
             <section class="info">
                 <div class="container">
-                    <div class="info__content d-flex justify-content-between">
+                    <div class="info__content d-flex justify-content-between" style="margin-top: 60px;">
                         <div class="info__left">
                             <h2 class="info__title">HISTORY</h2>
                             <p class="info__text">
@@ -113,7 +127,13 @@
             <div class="container">
                 <div class="footer__content">
                     <div class="footer__top d-flex justify-content-between">
-                        <a href="../../index.html" class="footer__logo">Burger <br> Heaven</a>
+                        <div class="footer__left">
+                            <a href="../../index.html" class="footer__logo">Burger <br> Heaven</a>
+                            <div class="theme-switcher">
+                                <button class="theme-switcher__button __active">Dark mode</button>
+                                <button class="theme-switcher__button">Light mode</button>
+                            </div>                            
+                        </div>
                         <ul class="footer__list">
                             <li class="footer__list-item">More</li>
                             <li class="footer__list-item"><a href="./about-us.html">About</a></li>
@@ -131,8 +151,11 @@
                             <div>
                                 <label for="" class="footer__form-title">Join Our Newsletter</label>
                                 <div class="footer__submit">
-                                    <input type="text" name="" id="" class="footer__form-text">
-                                    <button class="footer__form-submit">SUBMIT</button>
+                                    <textarea type="text" name="" id="" class="footer__form-text"></textarea>
+                                    <div class="footer__form-group">
+                                        <button class="footer__form-submit">SUBMIT</button>
+                                        <label for="" class="footer__form-label"><span>0</span>/360</label>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -144,6 +167,13 @@
                 </div>
             </div>
         </footer>
+        <div class="form-message">
+            <p class="form-message__text">
+            </p>
+        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js" integrity="sha512-8LENNbXmzI/Gbj+OwXmqR6V4QaUAw0/porPzy1+dQoJqC0JPHedWoe0DDOTL2uHA5XXJyIsPtiMHH86pVlay6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.2/jquery-ui.min.js" integrity="sha512-tNGSWf0jBrMhc+g3/okGfweLw7TYGTxs3GcTK5O+gLptfqNqlkgTp8c7+mpJcJxJvAl/u8FUZtUDm3JcDJmPWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="../js/main.js"></script>
 </body>
 </html>
