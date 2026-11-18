@@ -33,6 +33,11 @@
     border: 1px solid var(--dark-color);
     color: var(--dark-color);
 }
+/* Невалидное поле формы */
+.form div input.__invalid{
+    border-color: var(--red-color);
+    outline: 1px solid var(--red-color);
+}
 .join-us__btn {
     align-self: self-start;
 }
