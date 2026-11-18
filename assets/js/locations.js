@@ -1,20 +1,8 @@
-// locations.js
-// Секция #locations: карта первой локации (Google Maps JavaScript API).
-//
-// Что нужно заполнить перед запуском (Google Cloud Console):
-//   1. APIs & Services -> Library -> включить "Maps JavaScript API".
-//   2. Billing -> привязать платёжный аккаунт (у Google есть бесплатный лимит в месяц).
-//   3. Credentials -> создать API key и ограничить его по HTTP referrer (ваш домен + localhost).
 const CONFIG = {
-  // Ключ доступа. Ограничьте его по HTTP referrer в Google Cloud Console.
   apiKey: "AIzaSyCrx0pJ3QGeUyXi4ai1c2eQsdMxqUoWm5U",
-  // Координаты локации №1 из таблицы (строка с адресом "2848 Water St., ...").
   firstLocation: { lat: 43.249973, lng: 76.9462023 },
   zoom: 15,
 };
-
-// ---------- GoogleMapsLoader ----------
-// Подключает скрипт Google Maps API и отдаёт промис готовности google.maps.
 
 class GoogleMapsLoader {
   static CALLBACK_NAME = "__googleMapsReady";
@@ -41,9 +29,6 @@ class GoogleMapsLoader {
   }
 }
 
-// ---------- LocationsMap ----------
-// Карта с меткой первой локации.
-
 class LocationsMap {
   #element;
   #location;
@@ -63,8 +48,6 @@ class LocationsMap {
       streetViewControl: false,
     });
 
-    // google.maps.Marker устарел, но работает без Map ID.
-    // Для своего пина создайте Map ID и замените на AdvancedMarkerElement.
     new google.maps.Marker({
       position: this.#location,
       map,
@@ -74,9 +57,6 @@ class LocationsMap {
     return map;
   }
 }
-
-// ---------- Locations ----------
-// Находит контейнер секции и рисует карту.
 
 class Locations {
   static SELECTOR = "#locations-map";

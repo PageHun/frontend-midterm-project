@@ -1,8 +1,4 @@
-// main.js
-// Общие компоненты страницы. Каждый компонент — отдельный класс
-// со своим состоянием (приватные поля #) и публичным интерфейсом.
-
-// ---------- Burger menu ----------
+// Burger menu
 
 class BurgerMenu {
   #button;
@@ -26,7 +22,7 @@ class BurgerMenu {
   }
 }
 
-// ---------- Theme switcher ----------
+// Theme switcher
 
 class ThemeSwitcher {
   static ACTIVE_CLASS = "__active";
@@ -45,7 +41,6 @@ class ThemeSwitcher {
   }
 
   init() {
-    // Начальное состояние берём из разметки, затем применяем сохранённое.
     this.#isLight = this.#$target.hasClass(ThemeSwitcher.LIGHT_THEME_CLASS);
 
     const saved = this.#readSavedTheme();
@@ -59,9 +54,6 @@ class ThemeSwitcher {
     this.#saveTheme();
   }
 
-  // Единственное место, которое меняет классы. Если тема уже такая же, ничего не делает.
-  // Индикаторов может быть несколько (кнопки light и dark) и у каждого своё состояние
-  // класса, поэтому их нужно ПЕРЕКЛЮЧАТЬ, а не приводить к одному и тому же значению.
   #apply(isLight) {
     if (isLight === this.#isLight) return;
 
@@ -70,8 +62,6 @@ class ThemeSwitcher {
     this.#$target.toggleClass(ThemeSwitcher.LIGHT_THEME_CLASS, isLight);
   }
 
-  // localStorage может быть недоступен (приватный режим, запрет в настройках),
-  // поэтому обращения к нему обёрнуты в try/catch.
   #readSavedTheme() {
     try {
       return localStorage.getItem(ThemeSwitcher.STORAGE_KEY);
@@ -83,14 +73,11 @@ class ThemeSwitcher {
   #saveTheme() {
     try {
       localStorage.setItem(ThemeSwitcher.STORAGE_KEY, this.#isLight ? "light" : "dark");
-    } catch {
-      // Не удалось сохранить: тема просто не запомнится после перезагрузки.
-    }
+    } catch {}
   }
 }
 
-// ---------- Message (toast) ----------
-// Назвал FormMessage, чтобы не перекрывать глобальный браузерный Notification.
+// Message
 
 export class FormMessage {
   #$element;
@@ -116,7 +103,7 @@ export class FormMessage {
   }
 }
 
-// ---------- Footer newsletter ----------
+// Footer newsletter
 
 class NewsletterForm {
   static EMPTY_MESSAGE = "Newsletter is empty! </br> Fill out the newsletter.";
@@ -127,8 +114,6 @@ class NewsletterForm {
   #$counter;
   #formMessage;
 
-  // formMessage передаём снаружи (dependency injection),
-  // поэтому класс не зависит от конкретного экземпляра.
   constructor(formMessage) {
     this.#formMessage = formMessage;
     this.#$submit = $(".footer__form-submit");
@@ -154,9 +139,6 @@ class NewsletterForm {
     this.#$counter.html(this.#$input.val().length);
   }
 }
-
-// ---------- Composition ----------
-// Единственное место, где создаются объекты и связываются друг с другом.
 
 export const formMessage = new FormMessage(".form-message");
 

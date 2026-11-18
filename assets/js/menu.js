@@ -3,8 +3,7 @@ import { formMessage } from "./main.js";
 import { CART_ICON } from "./icons.js";
 import { FAVOURITE_ICON } from "./icons.js";
 
-// ---------- MenuRepository ----------
-// Отвечает только за получение данных: загрузка menu.json + кэш.
+// Menu
 
 class MenuRepository {
   #url;
@@ -30,7 +29,6 @@ class MenuRepository {
     }
   }
 
-  // Возвращает массив блюд категории или null, если данных нет.
   async getItems(categoryName) {
     const data = await this.#load();
     if (!data) return null;
@@ -43,7 +41,6 @@ class MenuRepository {
     return category.items;
   }
 
-  // Названия категорий без "Favourite" — из них строятся вкладки фильтра.
   async getCategoryNames() {
     const data = await this.#load();
     if (!data) return null;
@@ -53,7 +50,6 @@ class MenuRepository {
       .map((category) => category.name);
   }
 
-  // Блюда из избранного. При filterCategory === "All" возвращает все категории.
   async getFavouriteItems(keys, filterCategory) {
     const data = await this.#load();
     if (!data) return null;
@@ -68,7 +64,6 @@ class MenuRepository {
       .filter((item) => keys.includes(FavouritesStore.keyOf(item)));
   }
 
-  // Синхронизирует список favourite в данных menu.json с избранным.
   async syncFavourites(categoryName, keys) {
     const data = await this.#load();
     if (!data) return;
@@ -83,8 +78,7 @@ class MenuRepository {
   }
 }
 
-// ---------- MenuCardRenderer ----------
-// Отвечает только за HTML карточки.
+// MenuCardRenderer
 
 class MenuCardRenderer {
   #favourites;
@@ -95,7 +89,6 @@ class MenuCardRenderer {
 
   render(item) {
     const key = FavouritesStore.keyOf(item);
-    // Блюдо из избранного: иконка сердечка становится темнее через класс active.
     const activeClass = this.#favourites.has(key) ? ` ${Menu.FAVOURITE_CLASS}` : "";
 
     return `
@@ -129,8 +122,7 @@ class MenuCardRenderer {
   }
 }
 
-// ---------- MenuSearch ----------
-// Фильтрует карточки в сетке по названию.
+// MenuSearch
 
 class MenuSearch {
   #grid;
@@ -161,7 +153,6 @@ class MenuSearch {
 class FavouritesStore {
   static STORAGE_KEY = "favourites";
 
-  // Ключ блюда: id, если он есть в json, иначе название.
   static keyOf(item) {
     return String(item.id ?? item.name);
   }
@@ -180,7 +171,6 @@ class FavouritesStore {
     return [...this.#keys];
   }
 
-  // Добавляет блюдо в избранное или убирает его. Возвращает новое состояние.
   toggle(key) {
     if (this.#keys.has(key)) {
       this.#keys.delete(key);
@@ -191,7 +181,6 @@ class FavouritesStore {
     return this.#keys.has(key);
   }
 
-  // localStorage может быть недоступен или содержать мусор, поэтому try/catch.
   #read() {
     try {
       const saved = JSON.parse(localStorage.getItem(FavouritesStore.STORAGE_KEY));
@@ -204,23 +193,17 @@ class FavouritesStore {
   #save() {
     try {
       localStorage.setItem(FavouritesStore.STORAGE_KEY, JSON.stringify([...this.#keys]));
-    } catch {
-      // Хранилище недоступно: избранное сохранится только до перезагрузки страницы.
-    }
+    } catch {}
   }
 }
 
-// ---------- Menu ----------
-// Вкладки категорий + отрисовка сетки. Все зависимости приходят через конструктор.
+// Menu
 
 class Menu {
   static ACTIVE_TAB_CLASS = "__active-tab";
-  // Должно совпадать с названием категории избранного в menu.json.
   static FAVOURITE_CATEGORY = "Favourite";
-  // Первая вкладка фильтра внутри избранного: показывает все блюда.
   static ALL_FILTER = "All";
   static FILTER_ACTIVE_CLASS = "__active-filter";
-  // Класс, который делает иконку сердечка темнее.
   static FAVOURITE_CLASS = "active";
   static CARD_SELECTOR = ".menu__grid-item";
   static FAVOURITE_SELECTOR = ".menu__favourite";
@@ -233,7 +216,6 @@ class Menu {
   #renderer;
   #search;
   #favourites;
-  // Текущая вкладка фильтра внутри избранного.
   #filterCategory = Menu.ALL_FILTER;
 
   constructor({ grid, tabs, filters, repository, renderer, search, favourites }) {
@@ -249,7 +231,6 @@ class Menu {
   init() {
     this.#tabs.addEventListener("click", (event) => this.#handleTabClick(event));
     this.#filters.addEventListener("click", (event) => this.#handleFilterClick(event));
-    // Делегируем документу: такие же карточки появляются в корзине вне сетки меню.
     document.addEventListener("click", (event) => this.#handleFavouriteClick(event));
     this.showCategory(this.#activeCategory);
   }
@@ -281,7 +262,6 @@ class Menu {
     this.#search.apply();
   }
 
-  // Вкладки фильтра показываются только внутри избранного.
   async #renderFilters(categoryName) {
     if (categoryName !== Menu.FAVOURITE_CATEGORY) {
       this.#filters.hidden = true;
@@ -318,7 +298,6 @@ class Menu {
     tab.classList.add(Menu.ACTIVE_TAB_CLASS);
 
     const categoryName = tab.textContent.trim();
-    // При входе в избранное фильтр всегда начинается с "All".
     if (categoryName === Menu.FAVOURITE_CATEGORY) {
       this.#filterCategory = Menu.ALL_FILTER;
     }
@@ -334,7 +313,6 @@ class Menu {
     this.showCategory(Menu.FAVOURITE_CATEGORY);
   }
 
-  // Клик по сердечку добавляет блюдо в избранное (или убирает его).
   async #handleFavouriteClick(event) {
     const button = event.target.closest(Menu.FAVOURITE_SELECTOR);
     if (!button) return;
@@ -343,7 +321,6 @@ class Menu {
     if (!card) return;
 
     const isFavourite = this.#favourites.toggle(card.dataset.id);
-    // Синхронизируем исходную карточку и её копию в корзине.
     document.querySelectorAll(Menu.CARD_SELECTOR).forEach((item) => {
       if (item.dataset.id !== card.dataset.id) return;
       const favouriteButton = item.querySelector(Menu.FAVOURITE_SELECTOR);
@@ -354,7 +331,6 @@ class Menu {
 
     await this.#syncFavourites();
 
-    // На вкладке избранного список нужно перестроить.
     if (this.#activeCategory === Menu.FAVOURITE_CATEGORY) {
       this.showCategory(Menu.FAVOURITE_CATEGORY);
     }
