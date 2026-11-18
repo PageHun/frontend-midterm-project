@@ -16,7 +16,6 @@ th,td{
     color: var(--white-color);
 }
 
-/* --- Карта локации --- */
 .table__map {
     width: 100%;
     height: 420px;

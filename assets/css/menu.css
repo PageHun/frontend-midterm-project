@@ -51,7 +51,6 @@
 .menu__search-btn{
     background-color: transparent;
 }
-/* Вкладки фильтра внутри избранного */
 .menu__filters {
     display: flex;
     flex-wrap: wrap;
@@ -94,7 +93,6 @@
     background-size: cover;
     border-radius: 16px;
 }
-/* Блюдо из избранного: сама иконка сердечка становится темнее */
 .menu__favourite.active svg {
     filter: brightness(0.6);
 }
