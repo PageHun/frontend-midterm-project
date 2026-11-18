@@ -338,6 +338,12 @@
           "imgSource": "../imgs/menu/kids-meal.jpeg"
         }
       ]
+    },
+    {
+      "id": "favourite",
+      "name": "Favourite",
+      "items": [
+      ]
     }
   ]
 }

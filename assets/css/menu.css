@@ -51,6 +51,32 @@
 .menu__search-btn{
     background-color: transparent;
 }
+/* Вкладки фильтра внутри избранного */
+.menu__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+.menu__filters[hidden] {
+    display: none;
+}
+.menu__filter {
+    padding: 8px 18px;
+    border-radius: 16px;
+    background-color: var(--purple-color);
+    color: var(--dark-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: .6s ease all;
+}
+.menu__filter:hover {
+    background-color: var(--green-color);
+}
+.menu__filter.__active-filter {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
 
 .menu__grid {
     margin-top: 30px;
@@ -58,6 +84,7 @@
     gap: 60px 50px;
 }
 .menu__grid-item {
+    position: relative;
     width: 305px;
     min-height: 417px;
     display: flex;
@@ -67,6 +94,24 @@
     background-size: cover;
     border-radius: 16px;
 }
+/* Блюдо из избранного: сама иконка сердечка становится темнее */
+.menu__favourite.active svg {
+    filter: brightness(0.6);
+}
+.menu__favourite {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    line-height: 0;
+    cursor: pointer;
+}
+.menu__top{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
 .menu__price{
     display: flex;
     gap: 10px;
