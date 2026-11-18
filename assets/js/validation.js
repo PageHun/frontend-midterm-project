@@ -1,74 +1,95 @@
 import { formMessage } from "./main.js";
 
-// JoinUsForm
-class JoinUsForm {
-  static FORM_SELECTOR = ".form";
-  static INVALID_CLASS = "__invalid";
-  static FIELDS = {
-    name: {
-      message: "Enter your name (at least 2 letters).",
-      isValid: (value) => /^[A-Za-zА-Яа-яЁё\s'-]{2,}$/.test(value),
-    },
-    surname: {
-      message: "Enter your surname (at least 2 letters).",
-      isValid: (value) => /^[A-Za-zА-Яа-яЁё\s'-]{2,}$/.test(value),
-    },
-    email: {
-      message: "Enter a valid e-mail, e.g. name@example.com.",
-      isValid: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value),
-    },
-    phone: {
-      message: "Enter a valid phone number (at least 7 digits).",
-      isValid: (value) =>
-        /^\+?[\d\s()-]{7,}$/.test(value) && value.replace(/\D/g, "").length >= 7,
-    },
-  };
+// FormField
 
-  #form;
-  #formMessage;
+class FormField {
+  #$input;
+  #$feedback;
+  #rule;
 
-  constructor(formMessage) {
-    this.#form = document.querySelector(JoinUsForm.FORM_SELECTOR);
-    this.#formMessage = formMessage;
+  constructor($input, rule) {
+    this.#$input = $input;
+    this.#rule = rule;
+    this.#$feedback = $('<div class="feedback"></div>').insertAfter($input);
   }
 
   init() {
-    if (!this.#form) return;
+    this.#$input.on("input", () => this.validate());
+  }
 
-    this.#form.addEventListener("submit", (event) => this.#handleSubmit(event));
-    this.#form.addEventListener("input", (event) =>
-      event.target.classList.remove(JoinUsForm.INVALID_CLASS)
-    );
+  validate() {
+    const error = this.#rule(this.#$input.val().trim());
+    this.#render(error);
+    return !error;
+  }
+
+  reset() {
+    this.#$input.removeClass("is-valid is-invalid");
+    this.#$feedback.text("").removeClass("feedback-valid feedback-invalid");
+  }
+
+  #render(error) {
+    this.#$input
+      .toggleClass("is-valid", !error)
+      .toggleClass("is-invalid", !!error);
+
+    this.#$feedback
+      .text(error || "Looks good!")
+      .toggleClass("feedback-valid", !error)
+      .toggleClass("feedback-invalid", !!error);
+  }
+}
+
+// SignupForm
+
+class SignupForm {
+  static RULES = {
+    name: (value) => (value.length >= 2 ? "" : "Name must be at least 2 characters."),
+    surname: (value) => (value.length >= 2 ? "" : "Surname must be at least 2 characters."),
+    email: (value) => (/^\S+@\S+\.\S+$/.test(value) ? "" : "Enter a valid e-mail."),
+    phone: (value) =>
+      /^\+?\d{10,15}$/.test(value.replace(/[\s()-]/g, "")) ? "" : "Enter a valid phone number.",
+  };
+
+  static SUCCESS_MESSAGE = "Thank you for join us! Wait some news from us! <br> Good luck!";
+
+  #$form;
+  #fields;
+  #formMessage;
+
+  constructor(formSelector, formMessage) {
+    this.#formMessage = formMessage;
+    this.#$form = $(formSelector);
+    this.#$form.attr("novalidate", true);
+
+    this.#fields = this.#$form
+      .find("input")
+      .toArray()
+      .filter((input) => SignupForm.RULES[input.id])
+      .map((input) => new FormField($(input), SignupForm.RULES[input.id]));
+  }
+
+  init() {
+    this.#fields.forEach((field) => field.init());
+    this.#$form.on("submit", (event) => this.#handleSubmit(event));
+  }
+
+  isValid() {
+    return this.#fields.map((field) => field.validate()).every(Boolean);
   }
 
   #handleSubmit(event) {
     event.preventDefault();
+    if (!this.isValid()) return;
 
-    const error = this.#validate();
-    if (error) {
-      this.#formMessage.show(error);
-      return;
-    }
-
-    this.#form.reset();
-    this.#formMessage.show("Form successfully submitted!");
+    this.#reset();
+    this.#formMessage.show(SignupForm.SUCCESS_MESSAGE);
   }
 
-  #validate() {
-    let firstError = null;
-
-    for (const [id, rule] of Object.entries(JoinUsForm.FIELDS)) {
-      const input = this.#form.querySelector(`#${id}`);
-      if (!input) continue;
-
-      const isValid = rule.isValid(input.value.trim());
-      input.classList.toggle(JoinUsForm.INVALID_CLASS, !isValid);
-
-      if (!isValid && !firstError) firstError = rule.message;
-    }
-
-    return firstError;
+  #reset() {
+    this.#$form[0].reset();
+    this.#fields.forEach((field) => field.reset());
   }
 }
 
-new JoinUsForm(formMessage).init();
+new SignupForm(".form", formMessage).init();
